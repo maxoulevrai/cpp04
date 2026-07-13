@@ -18,7 +18,7 @@
 
 int main()
 {
-    std::cout << "--- Polymorphism with Animal / Dog / Cat ---" << std::endl;
+    std::cout << "--- Polymorphism Animal / Dog / Cat tests ---" << std::endl;
 
     Animal meta;
     Animal namedAnimal("Creature");
@@ -53,7 +53,7 @@ int main()
     std::cout << "copiedCat type: " << copiedCat.getType() << std::endl;
     std::cout << "assignedCat type: " << assignedCat.getType() << std::endl;
 
-    std::cout << std::endl << "--- Wrong polymorphism demo ---" << std::endl;
+    std::cout << std::endl << "--- Wrong polymorphism test ---" << std::endl;
 
     wrongCat wrongCatObject;
     wrongAnimal* wrongCat = &wrongCatObject;

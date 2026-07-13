@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 20:47:10 by codespace         #+#    #+#             */
-/*   Updated: 2026/07/12 03:21:48 by codespace        ###   ########.fr       */
+/*   Updated: 2026/07/11 21:49:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Cat::Cat(void) {
     std::cout << "Default Cat constructor called" << std::endl;
     this->_type = "Cat";
-    this->_brain = new Brain;
 }
 
 Cat::Cat(const Cat& other) : Animal(other) {
@@ -31,17 +30,8 @@ Cat &Cat::operator=(const Cat& other) {
 
 Cat::~Cat(void) {
     std::cout << "Cat destrutor called" << std::endl;
-    delete this->_brain;
-}
-
-const Brain   Cat::getBrain(void) const{
-    return (*this->_brain);
-}
-
-void    Cat::setBrain(const Brain &brain) {
-    *this->_brain = brain;
 }
 
 void    Cat::makeSound(void) const {
-    std::cout << "Miaou" << std::endl;
+    std::cout << this->_type << ": Miaou" << std::endl;
 }

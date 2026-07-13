@@ -32,5 +32,5 @@ Dog::~Dog(void) {
 }
 
 void    Dog::makeSound(void) const {
-    std::cout << "Waff" << std::endl;
+    std::cout << this->_type << ": Waff" << std::endl;
 }
