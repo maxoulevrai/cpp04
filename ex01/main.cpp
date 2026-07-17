@@ -3,63 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 21:28:20 by codespace         #+#    #+#             */
-/*   Updated: 2026/07/11 23:51:50 by codespace        ###   ########.fr       */
+/*   Created: 2026/07/17 14:54:33 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 17:48:44 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Animal.hpp"
 #include "includes/Dog.hpp"
 #include "includes/Cat.hpp"
-#include "includes/wrongAnimal.hpp"
-#include "includes/wrongCat.hpp"
 
 int main()
 {
-    std::cout << "--- Polymorphism Animal / Dog / Cat tests ---" << std::endl;
+	std::cout << std::endl << "--- Array of Animals test ---" << std::endl;
+	
+	const int arraySize = 4;
+	Animal* animalArray[arraySize];
 
-    Animal meta;
-    Animal namedAnimal("Creature");
-    Animal copiedAnimal(meta);
-    Animal assignedAnimal;
+	for (int i = 0; i < arraySize / 2; ++i)
+		animalArray[i] = new Dog();
 
-    Dog dog;
-    Dog copiedDog(dog);
-    Dog assignedDog;
+	for (int i = arraySize / 2; i < arraySize; ++i)
+		animalArray[i] = new Cat();
 
-    Cat cat;
-    Cat copiedCat(cat);
-    Cat assignedCat;
+	for (int i = 0; i < arraySize; ++i)
+	{
+		std::cout << "animalArray[" << i << "] type: " << animalArray[i]->getType() << std::endl;
+		std::cout << "animalArray[" << i << "] sound: ";
+		animalArray[i]->makeSound();
+	}
+	
+	std::cout << animalArray[0].
 
-    assignedAnimal = namedAnimal;
-    assignedDog = dog;
-    assignedCat = cat;
+	for (int i = 0; i < arraySize; ++i)
+	{
+		delete animalArray[i];
+	}
 
-    const Animal* animals[] = {&meta, &dog, &cat};
-
-    for (int index = 0; index < 3; ++index)
-    {
-        std::cout << "animal[" << index << "] type: " << animals[index]->getType() << std::endl;
-        std::cout << "animal[" << index << "] sound: ";
-        animals[index]->makeSound();
-    }
-
-    std::cout << "copiedAnimal type: " << copiedAnimal.getType() << std::endl;
-    std::cout << "assignedAnimal type: " << assignedAnimal.getType() << std::endl;
-    std::cout << "copiedDog type: " << copiedDog.getType() << std::endl;
-    std::cout << "assignedDog type: " << assignedDog.getType() << std::endl;
-    std::cout << "copiedCat type: " << copiedCat.getType() << std::endl;
-    std::cout << "assignedCat type: " << assignedCat.getType() << std::endl;
-
-    std::cout << std::endl << "--- Wrong polymorphism test ---" << std::endl;
-
-    wrongCat wrongCatObject;
-    wrongAnimal* wrongCat = &wrongCatObject;
-    std::cout << "wrongCat type: " << wrongCat->getType() << std::endl;
-    std::cout << "wrongCat sound: ";
-    wrongCat->makeSound();
-
-    return 0;
+	return 0;
 }

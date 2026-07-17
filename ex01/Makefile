@@ -5,9 +5,10 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 INC_DIR = includes
 
 SRCS = main.cpp $(wildcard srcs/*.cpp)
+INCS = $(wildcard includes/*.hpp)
 OBJS = $(SRCS:%.cpp=build/%.o)
 
-RED     = \e[31m
+RED	 = \e[31m
 GREEN   = \e[32m
 YELLOW  = \e[33m
 RESET   = \e[m
@@ -19,7 +20,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ $^
 	@printf "$(GREEN)Build complete$(RESET)\n"
 
-build/%.o: %.cpp
+build/%.o: %.cpp $(INCS)
 	@mkdir -p $(dir $@)
 	@printf "$(YELLOW)Compiling $<$(RESET)\n"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@

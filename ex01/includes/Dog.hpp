@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 20:14:45 by codespace         #+#    #+#             */
-/*   Updated: 2026/07/11 21:47:32 by codespace        ###   ########.fr       */
+/*   Created: 2026/07/17 14:54:07 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 17:50:53 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
-    public:
-        Dog();
-        Dog(const Dog& other);
-        Dog &operator=(const Dog& other);
-        ~Dog();
+	private:
+		Brain		*_veaucer;
+	public:
+		Dog();
+		Dog(const Dog& other);
+		Dog &operator=(const Dog& other);
+		~Dog();
 
-        void    makeSound(void) const;
+		void	makeSound(void) const;
+		Brain	&getBrain() const;
 };
 
 

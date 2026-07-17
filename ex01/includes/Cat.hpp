@@ -3,26 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 20:21:19 by codespace         #+#    #+#             */
-/*   Updated: 2026/07/11 23:28:35 by codespace        ###   ########.fr       */
+/*   Created: 2026/07/17 14:51:58 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 17:50:46 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal {
-    public:
-        Cat();
-        Cat(const Cat& other);
-        Cat &operator=(const Cat& other);
-        ~Cat();
+	private:
+		Brain		*_veaucer;
+	public:
+		Cat();
+		Cat(const Cat& other);
+		Cat &operator=(const Cat& other);
+		~Cat();
 
-        void    makeSound(void) const;
+		void	makeSound(void) const;
+		Brain	&getBrain() const;
 };
-
+	
 #endif

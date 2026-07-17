@@ -7,7 +7,7 @@ INC_DIR = includes
 SRCS = main.cpp $(wildcard srcs/*.cpp)
 OBJS = $(SRCS:%.cpp=build/%.o)
 
-RED     = \e[31m
+RED	 = \e[31m
 GREEN   = \e[32m
 YELLOW  = \e[33m
 RESET   = \e[m

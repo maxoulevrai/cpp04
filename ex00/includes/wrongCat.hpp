@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 23:42:56 by codespace         #+#    #+#             */
-/*   Updated: 2026/07/11 23:44:47 by codespace        ###   ########.fr       */
+/*   Created: 2026/07/17 14:53:05 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 14:53:07 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include "wrongAnimal.hpp"
 
 class wrongCat : public wrongAnimal {
-    public:
-        wrongCat();
-        wrongCat(const wrongCat& other);
-        wrongCat &operator=(const wrongCat& other);
-        ~wrongCat();
+	public:
+		wrongCat();
+		wrongCat(const wrongCat& other);
+		wrongCat &operator=(const wrongCat& other);
+		~wrongCat();
 
-        void    makeSound(void);
+		void	makeSound(void);
 };
 
 #endif
