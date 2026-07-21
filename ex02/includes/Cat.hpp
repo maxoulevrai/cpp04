@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/17 14:53:50 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 14:55:17 by maleca           ###   ########.fr       */
+/*   Created: 2026/07/17 14:51:58 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 17:50:46 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
 
-#include <string>
-#include <iostream>
 
-class Animal {
-	protected:
-		std::string _type;
+#ifndef CAT_HPP
+#define CAT_HPP
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal {
+	private:
+		Brain		*_veaucer;
 	public:
-		Animal();
-		Animal(std::string name);
-		Animal(const Animal& other);
-		Animal &operator=(const Animal& other);
-		virtual ~Animal();
+		Cat();
+		Cat(const Cat& other);
+		Cat &operator=(const Cat& other);
+		~Cat();
 
-		std::string getType(void) const;
-		void	setType(const std::string type);
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
+		Brain	&getBrain() const;
 };
-
+	
 #endif

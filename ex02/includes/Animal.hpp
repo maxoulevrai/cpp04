@@ -6,7 +6,7 @@
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 14:53:50 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 14:55:17 by maleca           ###   ########.fr       */
+/*   Updated: 2026/07/21 15:58:13 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal {
 
 		std::string getType(void) const;
 		void	setType(const std::string type);
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 };
 
 #endif

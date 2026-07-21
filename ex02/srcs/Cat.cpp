@@ -6,7 +6,7 @@
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 14:54:23 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 16:40:57 by maleca           ###   ########.fr       */
+/*   Updated: 2026/07/21 15:55:47 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@ Cat::Cat(void) : Animal("Cat"){
 
 Cat::Cat(const Cat& other) : Animal(other) {
 	std::cout << "Cat copy construtor calld" << std::endl;
-	this->_veaucer = new Brain(other.getBrain());
 }
 
 Cat &Cat::operator=(const Cat& other) {
 	std::cout << "Cat copy assignment constructor called" << std::endl;
 	if (this != &other)
-	{
 		this->_type = other._type;
-		this->_veaucer = other._veaucer;
-	}
 	return (*this);
 }
 

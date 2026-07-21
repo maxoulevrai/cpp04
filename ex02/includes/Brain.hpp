@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/17 14:53:50 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 14:55:17 by maleca           ###   ########.fr       */
+/*   Created: 2026/07/17 14:54:00 by maleca            #+#    #+#             */
+/*   Updated: 2026/07/17 14:54:02 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <string>
-#include <iostream>
 
-class Animal {
-	protected:
-		std::string _type;
+class Brain {
+	private:
+		std::string _Ideas[100];
 	public:
-		Animal();
-		Animal(std::string name);
-		Animal(const Animal& other);
-		Animal &operator=(const Animal& other);
-		virtual ~Animal();
-
-		std::string getType(void) const;
-		void	setType(const std::string type);
-		virtual void	makeSound(void) const;
+		Brain();
+		~Brain();
+		Brain &operator=(const Brain &other);
+		Brain(const Brain &other);
+		
+		const std::string	&getIdea(const int idx) const;
+		void				setIdea(const std::string &idea, const int &idx);
 };
 
 #endif

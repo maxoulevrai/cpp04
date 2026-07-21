@@ -6,7 +6,7 @@
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 14:54:33 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 16:13:17 by maleca           ###   ########.fr       */
+/*   Updated: 2026/07/21 15:58:57 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 #include "includes/Dog.hpp"
 #include "includes/Cat.hpp"
 
-
-
-
-void	arrayTest(void)
+int main()
 {
 	std::cout << std::endl << "--- Array of Animals test ---" << std::endl;
 	
@@ -61,59 +58,6 @@ void	arrayTest(void)
 	{
 		delete animalArray[i];
 	}
-}
-
-void	dogCopyTest(void)
-{
-	std::cout << std::endl << "--- Copy of Dog test ---" << std::endl;
-
-	Dog *d1 = new Dog();
-	d1->getBrain().setIdea("Let's eat", 0);
-	d1->getBrain().setIdea("Give me bone now", 1);
-
-	std::cout << "OG Dog idea 0: " << d1->getBrain().getIdea(0) << std::endl;
-	std::cout << "OG Dog idea 1: " << d1->getBrain().getIdea(1) << std::endl;
-
-	Dog *d2 = new Dog(*d1);
-
-	delete d1;
-
-	std::cout << "Copy Dog idea 0: " << d1->getBrain().getIdea(0) << std::endl;
-	std::cout << "Copy Dog idea 1: " << d1->getBrain().getIdea(1) << std::endl;
-
-	delete d2;
-}
-
-void	catCopyTest(void)
-{
-	std::cout << std::endl << "--- Copy of Cat test ---" << std::endl;
-
-	Cat *c1 = new Cat();
-	c1->getBrain().setIdea("Let's eat", 0);
-	c1->getBrain().setIdea("Give me bone now", 1);
-
-	std::cout << "OG Cat idea 0: " << c1->getBrain().getIdea(0) << std::endl;
-	std::cout << "OG Cat idea 1: " << c1->getBrain().getIdea(1) << std::endl;
-
-	Cat *c2 = new Cat(*c1);
-
-	delete c1;
-
-	std::cout << "Copy Cat idea 0: " << c1->getBrain().getIdea(0) << std::endl;
-	std::cout << "Copy Cat idea 1: " << c1->getBrain().getIdea(1) << std::endl;
-
-	delete c2;
-}
-
-
-int main()
-{
-	arrayTest();
-	std::cout << std::endl << std::endl;
-	dogCopyTest();
-	std::cout << std::endl << std::endl;
-	catCopyTest();
-	std::cout << std::endl << std::endl;
 
 	return 0;
 }

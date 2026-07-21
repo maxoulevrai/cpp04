@@ -6,7 +6,7 @@
 /*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 14:54:28 by maleca            #+#    #+#             */
-/*   Updated: 2026/07/21 16:39:13 by maleca           ###   ########.fr       */
+/*   Updated: 2026/07/21 15:56:08 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 Dog::Dog(void) : Animal("Dog") {
 	std::cout << "Default Dog constructor called" << std::endl;
-	// this->_veaucer = new Brain();
+	this->_veaucer = new Brain();
 }
 
-Dog::Dog(const Dog& other) : Animal(){
+Dog::Dog(const Dog& other) : Animal(other) {
 	std::cout << "Dog copy construtor called" << std::endl;
-	this->_type = other._type;
-	this->_veaucer = new Brain(*other._veaucer);
 }
 
 Dog &Dog::operator=(const Dog& other) {
 	std::cout << "Dog copy assignement constructor called" << std::endl;
 	if (this != &other)
-	{
 		this->_type = other._type;
-		this->_veaucer = other._veaucer;
-	}
 	return (*this);
 }
 
