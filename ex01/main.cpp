@@ -14,12 +14,9 @@
 #include "includes/Dog.hpp"
 #include "includes/Cat.hpp"
 
-
-
-
 void	arrayTest(void)
 {
-	std::cout << std::endl << "--- Array of Animals test ---" << std::endl;
+	std::cout << std::endl << "#### Array of Animals test ####" << std::endl;
 	
 	const int arraySize = 4;
 	Animal *animalArray[arraySize];
@@ -40,7 +37,7 @@ void	arrayTest(void)
 			Dog* dog = dynamic_cast<Dog*>(animalArray[i]);
 			if (dog)
 			{
-				dog->getBrain().setIdea("oe", 0);
+				dog->getBrain().setIdea("I want to play fetch", 0);
 				std::cout << "animalArray[" << i << "] idea: " << dog->getBrain().getIdea(0) << std::endl;
 				continue ;
 			}
@@ -50,7 +47,7 @@ void	arrayTest(void)
 			Cat* cat = dynamic_cast<Cat*>(animalArray[i]);
 			if (cat)
 			{
-				cat->getBrain().setIdea("oe", 0);
+				cat->getBrain().setIdea("I want to chase a mouse", 0);
 				std::cout << "animalArray[" << i << "] idea: " << cat->getBrain().getIdea(0) << std::endl;
 				continue ;
 			}
@@ -65,7 +62,7 @@ void	arrayTest(void)
 
 void	dogCopyTest(void)
 {
-	std::cout << std::endl << "--- Copy of Dog test ---" << std::endl;
+	std::cout << std::endl << "#### Copy of Dog test ####" << std::endl;
 
 	Dog *d1 = new Dog();
 	d1->getBrain().setIdea("Let's eat", 0);
@@ -86,7 +83,7 @@ void	dogCopyTest(void)
 
 void	catCopyTest(void)
 {
-	std::cout << std::endl << "--- Copy of Cat test ---" << std::endl;
+	std::cout << std::endl << "#### Copy of Cat test ####" << std::endl;
 
 	Cat *c1 = new Cat();
 	c1->getBrain().setIdea("Let's eat", 0);
