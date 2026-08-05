@@ -12,12 +12,12 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat"){
+Cat::Cat(void) : A_Animal("Cat"){
 	std::cout << "Default Cat constructor called" << std::endl;
 	this->_veaucer = new Brain();
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {
+Cat::Cat(const Cat& other) : A_Animal(other) {
 	std::cout << "Cat copy construtor calld" << std::endl;
 }
 
