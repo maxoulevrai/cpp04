@@ -5,18 +5,14 @@
 
 class Cure : public AMateria
 {
-    protected:
-        std::string _type;
-    public:
-        Cure();
-        Cure(std::string const & type);
-        Cure    &operator=(Cure const &other);
-        Cure(Cure const &other);
-        ~Cure();
+public:
+    Cure();
+    Cure(Cure const &other);
+    Cure &operator=(Cure const &other);
+    ~Cure();
 
-        std::string const & getType() const;
-        virtual Cure* clone() const = 0;
-        virtual void use(ICharacter& target);
+    virtual AMateria* clone() const;
+    virtual void use(ICharacter& target);
 };
 
 #endif
