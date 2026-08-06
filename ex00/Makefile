@@ -1,4 +1,4 @@
-NAME = NoWomanNoFire
+NAME = Polymorphism
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98

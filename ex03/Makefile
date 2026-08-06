@@ -1,4 +1,4 @@
-NAME = IsAbstract
+NAME = PGP
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
