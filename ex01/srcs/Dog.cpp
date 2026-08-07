@@ -14,13 +14,12 @@
 
 Dog::Dog(void) : Animal("Dog") {
 	std::cout << "Default Dog constructor called" << std::endl;
-	// this->_veaucer = new Brain();
+	this->_veaucer = new Brain();
 }
 
-Dog::Dog(const Dog& other) : Animal(){
+Dog::Dog(const Dog& other) : Animal(other) {
 	std::cout << "Dog copy construtor called" << std::endl;
-	this->_type = other._type;
-	this->_veaucer = new Brain(*other._veaucer);
+	this->_veaucer = new Brain(other.getBrain());
 }
 
 Dog &Dog::operator=(const Dog& other) {
@@ -28,7 +27,9 @@ Dog &Dog::operator=(const Dog& other) {
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_veaucer = other._veaucer;
+		if (this->_veaucer)
+			delete this->_veaucer;
+		this->_veaucer = new Brain(other.getBrain());
 	}
 	return (*this);
 }

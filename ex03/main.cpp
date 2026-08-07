@@ -12,20 +12,31 @@ int main()
     MateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Ice());
 
     Character* me = new Character("me");
-
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-
     Character* bob = new Character("bob");
 
+    me->equip(NULL);
+    me->equip(src->createMateria("ice"));
+    me->equip(src->createMateria("cure"));
+    me->equip(src->createMateria("ice"));
+    me->equip(src->createMateria("cure"));
+
+    me->use(-1, *bob);
+    me->use(4, *bob);
     me->use(0, *bob);
     me->use(1, *bob);
 
+    me->unequip(1);
+    me->use(1, *bob);
+
+    Character* copy = new Character(*me);
+    copy->use(0, *bob);
+
+    delete copy;
     delete bob;
     delete me;
     delete src;

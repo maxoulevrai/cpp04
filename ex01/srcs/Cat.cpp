@@ -27,7 +27,9 @@ Cat &Cat::operator=(const Cat& other) {
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_veaucer = other._veaucer;
+		if (this->_veaucer)
+			delete this->_veaucer;
+		this->_veaucer = new Brain(other.getBrain());
 	}
 	return (*this);
 }
